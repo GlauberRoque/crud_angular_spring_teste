@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="notices" class="mat-elevation-z8">
+
+
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let notices"> {{ notices.title }} </td>
+    </ng-container>
+
+    <!-- description Column -->
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let notices"> {{ notices.description }} </td>
+    </ng-container>
+
+    <!-- publicationDate Column -->
+    <ng-container matColumnDef="publicationDate">
+        <span ng-non-bindable>{{1288323623006 | date:'shortDate'}}</span>:
+        <span>{{1288323623006 | date:'shortDate'}}</span><br>
+        <th mat-header-cell *matHeaderCellDef> Publication Date </th>
+        <td mat-cell *matCellDef="let notices"> {{ notices.publicationDate }} </td>
+    </ng-container>
+
+    <!-- dateView Column -->
+    <ng-container matColumnDef="dateView">
+        <span ng-non-bindable>{{1288323623006 | date:'shortDate'}}</span>:
+        <span>{{1288323623006 | date:'shortDate'}}</span><br>
+        <th mat-header-cell *matHeaderCellDef> Date View </th>
+        <td mat-cell *matCellDef="let notices"> {{ notices.dateView }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
